@@ -1,9 +1,9 @@
+import CreateCharacter from "./createForm";
 
-
-async function getCharacter(id: string){
+export async function getCharacter(id: string){
     const res = await fetch('https://rickandmortyapi.com/api/character/' + id, {
         next: {
-            revalidate: 60
+            revalidate: 0
         }
     })
 
@@ -16,29 +16,7 @@ export default async function CharacterDetails({
 }: {
     params: {id: string};
 }) {
-    // const router = useRouter()
-    // const [location, setLocation] = useState('')
-    // const [isLoading, setIsLoading] = useState(false)
     const character = await getCharacter(params.id)
-
-    // const handleSubmit = async (e)  => {
-    //     e.preventDefault()
-    //     setIsLoading(true)
-    
-    //     const newCharacter = { character.name, body, priority, user_email: 'mario@netninja.dev' }
-    
-    //     const res = await fetch('http://localhost:4000/tickets', {
-    //       method: "POST",
-    //       headers: {"Content-Type": "application/json"},
-    //       body: JSON.stringify(newCharacter)
-    //     })
-    
-    //     if (res.status === 201) {
-    //       router.refresh()
-    //       router.push('/tickets')
-    //     }
-        
-    //   }
     
     return(
         <main>
@@ -56,10 +34,10 @@ export default async function CharacterDetails({
                     Location : {character.location.name}
                 </div>
                 <p>Origin : {character.origin.name}</p>
-                <button className="btn-primary">Add Location</button>
             </div>
 
             <h2 className="text-primary text-center">Add Character Location</h2>
+            <CreateCharacter id={"2"}/>
         </main>
     )
 }

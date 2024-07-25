@@ -1,13 +1,17 @@
 {
-    "characters":[
-        {
-            "id": 1,
-            "name": "Rick Sanchez",
-            "status": "Alive",
-            "species": "Human",
-            "gender": "Male",
-            "location":"Earth",
-            "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-          }
-    ]
+  "characters": [
+    {
+      "id": "a7b5",
+      "location": "earth"
+    },
+    {
+      "id": "",
+      "name": "",
+      "status": "",
+      "species": "",
+      "gender": "",
+      "location": "dd",
+      "image": ""
+    }
+  ]
 }
